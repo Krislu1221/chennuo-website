@@ -406,15 +406,15 @@
 
         .demo-container {
             display: flex;
-            gap: 80px;
-            max-width: 1200px;
+            gap: 100px;
+            max-width: 1400px;
             margin: 0 auto;
-            align-items: flex-start;
+            align-items: center;
         }
 
         .demo-animation {
-            flex: 1;
-            max-width: 600px;
+            flex: 0 0 520px;
+            max-width: 520px;
         }
 
         .demo-animation svg {
@@ -428,36 +428,40 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 50px;
+            gap: 60px;
+            max-width: 680px;
         }
 
         .demo-step {
             position: relative;
-            padding-left: 60px;
+            padding-left: 70px;
+            min-height: 110px;
         }
 
         .demo-step-number {
             position: absolute;
             left: 0;
             top: 0;
-            font-size: 56px;
+            font-size: 72px;
             font-weight: 700;
             color: #0066FF;
             line-height: 1;
+            opacity: 0.15;
         }
 
         .demo-step-title {
-            font-size: 22px;
-            font-weight: 500;
+            font-size: 26px;
+            font-weight: 600;
             color: #1A1A1A;
-            margin-bottom: 12px;
-            padding-top: 10px;
+            margin-bottom: 14px;
+            padding-top: 12px;
+            letter-spacing: 0.5px;
         }
 
         .demo-step-desc {
-            font-size: 15px;
+            font-size: 17px;
             color: #666666;
-            line-height: 1.8;
+            line-height: 1.9;
             font-weight: 300;
         }
 
@@ -708,12 +712,12 @@
 
             .demo-title {
                 font-size: 24px;
-                margin-bottom: 40px;
+                margin-bottom: 50px;
             }
 
             .demo-container {
                 flex-direction: column;
-                gap: 50px;
+                gap: 60px;
             }
 
             .demo-animation {
@@ -721,28 +725,32 @@
                 max-width: none;
             }
 
-            .demo-animation iframe {
-                height: 400px;
+            .demo-animation svg {
+                max-width: 400px;
+                margin: 0 auto;
+                display: block;
             }
 
             .demo-steps {
-                gap: 40px;
+                gap: 50px;
             }
 
             .demo-step {
-                padding-left: 50px;
+                padding-left: 60px;
+                min-height: 100px;
             }
 
             .demo-step-number {
-                font-size: 40px;
+                font-size: 56px;
+                opacity: 0.15;
             }
 
             .demo-step-title {
-                font-size: 18px;
+                font-size: 20px;
             }
 
             .demo-step-desc {
-                font-size: 14px;
+                font-size: 15px;
             }
 
             .footer {
