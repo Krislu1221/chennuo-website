@@ -390,6 +390,94 @@
             font-weight: 500;
         }
 
+        /* 演示区域 */
+        .demo-section {
+            min-height: 80vh;
+            padding: 100px 60px;
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .demo-title {
+            font-size: 36px;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .demo-subtitle {
+            font-size: 18px;
+            color: #999999;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .demo-container {
+            display: flex;
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .demo-animation {
+            flex: 1;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+        }
+
+        .demo-animation iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .demo-steps {
+            flex: 1;
+            padding: 40px;
+        }
+
+        .demo-step {
+            margin-bottom: 40px;
+            padding-left: 20px;
+            border-left: 3px solid #0066FF;
+        }
+
+        .demo-step-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #0066FF;
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: -10px;
+        }
+
+        .demo-step-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1A1A1A;
+            margin-bottom: 12px;
+        }
+
+        .demo-step-desc {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
         .cta-button {
             padding: 18px 48px;
             background: #0066FF;
@@ -628,6 +716,54 @@
             }
 
             .about-label {
+                font-size: 14px;
+            }
+
+            .demo-section {
+                padding: 60px 20px;
+            }
+
+            .demo-title {
+                font-size: 28px;
+            }
+
+            .demo-subtitle {
+                font-size: 14px;
+            }
+
+            .demo-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .demo-animation {
+                width: 100%;
+                min-height: 400px;
+                padding: 20px;
+            }
+
+            .demo-animation iframe {
+                height: 400px;
+            }
+
+            .demo-steps {
+                width: 100%;
+                padding: 20px;
+            }
+
+            .demo-step {
+                margin-bottom: 30px;
+            }
+
+            .demo-step-number {
+                font-size: 36px;
+            }
+
+            .demo-step-title {
+                font-size: 20px;
+            }
+
+            .demo-step-desc {
                 font-size: 14px;
             }
 
@@ -881,6 +1017,41 @@
         <div class="roi">投资回报周期：<strong id="roiPeriod">2.1 年</strong></div>
 
         <button class="cta-button">获取详细节能方案 →</button>
+    </section>
+
+    <!-- 演示区域：冷却流程 -->
+    <section class="demo-section" id="demo">
+        <h2 class="demo-title">冷却流程演示</h2>
+        <p class="demo-subtitle">三阶段雾化冷却过程</p>
+        
+        <div class="demo-container">
+            <div class="demo-animation">
+                <iframe src="http://127.0.0.1:8888/cooling-tower-demo.html" frameborder="0"></iframe>
+            </div>
+            <div class="demo-steps">
+                <div class="demo-step">
+                    <div class="demo-step-number">01</div>
+                    <h3 class="demo-step-title">热水进入</h3>
+                    <p class="demo-step-desc">
+                        冷却水循环系统中，热水通过管道进入雾化装置，利用水泵的初始压力作为动力源。
+                    </p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-number">02</div>
+                    <h3 class="demo-step-title">二次雾化</h3>
+                    <p class="demo-step-desc">
+                        热水分两次冲击内壁和喷头 R 角，悬浮喷出雾化，形成极细的水雾颗粒，最大化散热面积。
+                    </p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-number">03</div>
+                    <h3 class="demo-step-title">冷却排出</h3>
+                    <p class="demo-step-desc">
+                        水的反作用力推动装置旋转，带动风叶产生风量，湿热空气经收水装置分离后排出，冷水流出循环使用。
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- 第四屏：公司介绍 -->
