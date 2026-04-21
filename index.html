@@ -87,16 +87,17 @@
         }
 
         .hero-slogan {
-            font-size: 48px;
-            font-weight: 200;
-            letter-spacing: 8px;
+            font-size: 56px;
+            font-weight: 600;
+            letter-spacing: 12px;
             margin-bottom: 24px;
             color: #1A1A1A;
+            font-family: "PingFang SC", "Microsoft YaHei", "Heiti SC", sans-serif;
         }
 
         .hero-slogan .highlight {
             color: #0066FF;
-            font-weight: 400;
+            font-weight: 700;
         }
 
         .hero-subtitle {
@@ -461,40 +462,199 @@
             margin-bottom: 10px;
         }
 
-        /* 响应式 */
+        /* 响应式 - 手机端优化 */
         @media (max-width: 768px) {
             .navbar {
-                padding: 0 20px;
+                padding: 0 15px;
+                height: 60px;
+            }
+
+            .navbar-logo {
+                font-size: 18px;
             }
 
             .navbar-menu {
                 display: none;
             }
 
-            .hero-slogan {
-                font-size: 32px;
-                letter-spacing: 4px;
+            .navbar-contact {
+                padding: 8px 16px;
+                font-size: 13px;
             }
 
-            .features, .economics, .about {
+            .hero {
+                padding: 100px 20px 40px;
+            }
+
+            .hero-slogan {
+                font-size: 36px;
+                letter-spacing: 6px;
+                margin-bottom: 20px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .hero-features {
+                gap: 30px;
+            }
+
+            .hero-feature-value {
+                font-size: 28px;
+            }
+
+            .hero-feature-label {
+                font-size: 12px;
+            }
+
+            .features {
                 padding: 60px 20px;
             }
 
-            .savings-total {
-                font-size: 56px;
+            .features-title {
+                font-size: 28px;
+                letter-spacing: 2px;
             }
 
-            .savings-breakdown {
-                gap: 40px;
+            .features-subtitle {
+                font-size: 14px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .feature-card {
+                height: 220px;
+            }
+
+            .feature-icon {
+                font-size: 40px;
+            }
+
+            .feature-name {
+                font-size: 20px;
+            }
+
+            .feature-title {
+                font-size: 16px;
+            }
+
+            .feature-desc {
+                font-size: 12px;
+            }
+
+            .economics {
+                padding: 60px 20px;
+            }
+
+            .economics-title {
+                font-size: 28px;
+            }
+
+            .economics-subtitle {
+                font-size: 14px;
             }
 
             .flow-selector {
                 gap: 10px;
+                margin-bottom: 40px;
             }
 
             .flow-btn {
-                padding: 12px 20px;
+                padding: 12px 18px;
                 font-size: 14px;
+                min-width: 100px;
+            }
+
+            .savings-total {
+                font-size: 48px;
+            }
+
+            .savings-label {
+                font-size: 16px;
+            }
+
+            .savings-breakdown {
+                gap: 30px;
+            }
+
+            .savings-amount {
+                font-size: 28px;
+            }
+
+            .savings-bar {
+                width: 140px;
+            }
+
+            .roi {
+                font-size: 18px;
+            }
+
+            .cta-button {
+                padding: 16px 32px;
+                font-size: 15px;
+            }
+
+            .about {
+                padding: 60px 20px;
+            }
+
+            .about-title {
+                font-size: 28px;
+            }
+
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .about-number {
+                font-size: 40px;
+            }
+
+            .about-label {
+                font-size: 14px;
+            }
+
+            .footer {
+                padding: 40px 20px;
+            }
+
+            .footer-contact {
+                font-size: 14px;
+            }
+
+            .footer-text {
+                font-size: 12px;
+            }
+        }
+
+        /* 超小屏幕优化 */
+        @media (max-width: 480px) {
+            .hero-slogan {
+                font-size: 28px;
+                letter-spacing: 4px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                height: 200px;
+            }
+
+            .savings-breakdown {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
