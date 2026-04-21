@@ -722,15 +722,13 @@
             </div>
             <div class="feature-card">
                 <div class="feature-card-inner">
-                    <div class="feature-card-inner">
-                        <div class="feature-front">
-                            <span class="feature-icon">💧</span>
-                            <h3 class="feature-name">省水</h3>
-                        </div>
-                        <div class="feature-back">
-                            <h4 class="feature-title">360 度全方位雾化</h4>
-                            <p class="feature-desc">节水 40-60%<br>水雾凝结回收装置<br>专利防飘水设计</p>
-                        </div>
+                    <div class="feature-front">
+                        <span class="feature-icon">💧</span>
+                        <h3 class="feature-name">省水</h3>
+                    </div>
+                    <div class="feature-back">
+                        <h4 class="feature-title">360 度全方位雾化</h4>
+                        <p class="feature-desc">节水 40-60%<br>水雾凝结回收装置<br>专利防飘水设计</p>
                     </div>
                 </div>
             </div>
@@ -1001,15 +999,17 @@
 
         // 卡片点击翻转（支持手机端）
         document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('click', function() {
-                // 切换翻转状态
-                this.classList.toggle('flipped');
-            });
+            let isFlipped = false;
             
-            // 也支持触摸事件
-            card.addEventListener('touchstart', function(e) {
-                e.preventDefault(); // 防止触发其他触摸行为
-                this.classList.toggle('flipped');
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                isFlipped = !isFlipped;
+                
+                if (isFlipped) {
+                    this.classList.add('flipped');
+                } else {
+                    this.classList.remove('flipped');
+                }
             });
         });
 
