@@ -184,6 +184,7 @@
             perspective: 1000px;
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            -webkit-tap-highlight-color: transparent;
         }
 
         .feature-card-inner {
@@ -194,7 +195,8 @@
             transform-style: preserve-3d;
         }
 
-        .feature-card:hover .feature-card-inner {
+        .feature-card:hover .feature-card-inner,
+        .feature-card.flipped .feature-card-inner {
             transform: rotateY(180deg);
         }
 
@@ -994,6 +996,20 @@
                         offsetTop: 0
                     });
                 }
+            });
+        });
+
+        // 卡片点击翻转（支持手机端）
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('click', function() {
+                // 切换翻转状态
+                this.classList.toggle('flipped');
+            });
+            
+            // 也支持触摸事件
+            card.addEventListener('touchstart', function(e) {
+                e.preventDefault(); // 防止触发其他触摸行为
+                this.classList.toggle('flipped');
             });
         });
 
