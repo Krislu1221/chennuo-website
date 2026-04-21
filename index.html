@@ -195,9 +195,18 @@
             transform-style: preserve-3d;
         }
 
-        .feature-card:hover .feature-card-inner,
-        .feature-card.flipped .feature-card-inner {
-            transform: rotateY(180deg);
+        /* 电脑端：鼠标悬停翻转 */
+        @media (min-width: 769px) {
+            .feature-card:hover .feature-card-inner {
+                transform: rotateY(180deg);
+            }
+        }
+
+        /* 手机端：点击翻转 */
+        @media (max-width: 768px) {
+            .feature-card.flipped .feature-card-inner {
+                transform: rotateY(180deg);
+            }
         }
 
         .feature-front, .feature-back {
@@ -997,21 +1006,18 @@
             });
         });
 
-        // 卡片点击翻转（支持手机端）
-        document.querySelectorAll('.feature-card').forEach(card => {
-            let isFlipped = false;
-            
-            card.addEventListener('click', function(e) {
-                e.preventDefault();
-                isFlipped = !isFlipped;
-                
-                if (isFlipped) {
-                    this.classList.add('flipped');
-                } else {
-                    this.classList.remove('flipped');
-                }
+        // 卡片点击翻转（仅手机端）
+        if (window.innerWidth <= 768) {
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // 切换翻转状态
+                    this.classList.toggle('flipped');
+                });
             });
-        });
+        }
 
         // 滚动时触发动画
         const observer = new IntersectionObserver((entries) => {
