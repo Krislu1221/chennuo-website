@@ -1036,6 +1036,53 @@
             .comparison-table th, .comparison-table td { padding: 12px 8px; }
         }
 
+
+        /* 数据专区样式 */
+        .data-section {
+            padding: 80px 60px;
+            background: #f8fafc;
+            text-align: center;
+        }
+        .data-section h2 {
+            font-size: 32px;
+            font-weight: 200;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        .data-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .data-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .data-card:hover {
+            transform: translateY(-5px);
+        }
+        .data-card .icon { font-size: 40px; margin-bottom: 20px; }
+        .data-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; color: #1A1A1A; }
+        .data-card p { font-size: 14px; color: #666; margin-bottom: 24px; line-height: 1.6; }
+        .data-card a {
+            display: inline-block;
+            padding: 10px 24px;
+            border: 1px solid #0066FF;
+            color: #0066FF;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .data-card a:hover { background: #0066FF; color: #fff; }
+
     </style>
 </head>
 <body>
@@ -1048,6 +1095,7 @@
             <li><a href="#economics">经济效益</a></li>
             <li><a href="#about">公司介绍</a></li>
         </ul>
+        <li><a href="https://github.com/krislu1221/chennuo-website" target="_blank">📄 技术报告</a></li>
         <a href="#contact" class="navbar-contact">联系我们</a>
     </nav>
 
@@ -1745,6 +1793,35 @@
             <div class="faq-item">
                 <h3>相比传统冷却塔，投资回报周期是多久？</h3>
                 <p>根据客户规模不同，通常在 1.5 年 到 3 年 内即可通过节省的电费和水费收回设备投资成本。例如 1000m³/h 的机组，每年可节省约 54 万元。</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 新增：测评与案例数据专区 (跳转 GitHub) -->
+    <section class="data-section">
+        <div class="data-container">
+            <h2>📊 测评与案例数据</h2>
+            <p style="color:#666; margin-bottom:30px;">我们坚持数据透明，所有测试报告与真实案例均托管于 GitHub</p>
+            <div class="data-grid">
+                <div class="data-card">
+                    <div class="icon">📝</div>
+                    <h3>产品测评报告</h3>
+                    <p>噪音测试、能效比、漂水率检测报告</p>
+                    <a href="https://github.com/krislu1221/chennuo-website" target="_blank">查看报告 &rarr;</a>
+                </div>
+                <div class="data-card">
+                    <div class="icon">🏭</div>
+                    <h3>真实客户案例</h3>
+                    <p>化工、冶金行业实际应用数据与 ROI</p>
+                    <a href="https://github.com/krislu1221/chennuo-website" target="_blank">查看案例 &rarr;</a>
+                </div>
+                <div class="data-card">
+                    <div class="icon">📈</div>
+                    <h3>行业分析白皮书</h3>
+                    <p>2026 工业冷却塔节能趋势分析</p>
+                    <a href="https://github.com/krislu1221/chennuo-website" target="_blank">下载报告 &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
