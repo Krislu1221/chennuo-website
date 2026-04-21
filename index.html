@@ -525,6 +525,69 @@
             font-weight: 300;
         }
 
+        /* Logo 滚动展示 */
+        .logo-section {
+            margin-top: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logo-section::before,
+        .logo-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            background: linear-gradient(to right, #FAFAFA, transparent);
+            z-index: 2;
+        }
+
+        .logo-section::before {
+            left: 0;
+        }
+
+        .logo-section::after {
+            right: 0;
+            background: linear-gradient(to left, #FAFAFA, transparent);
+        }
+
+        .logo-track {
+            display: flex;
+            gap: 60px;
+            animation: scrollLogos 60s linear infinite;
+        }
+
+        .logo-group {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .logo-group img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+            filter: grayscale(100%);
+        }
+
+        .logo-group img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
         /* 页脚 */
         .footer {
             padding: 60px;
@@ -785,6 +848,28 @@
 
             .about-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .logo-section {
+                margin-top: 60px;
+            }
+
+            .logo-track {
+                gap: 40px;
+                animation-duration: 40s;
+            }
+
+            .logo-group {
+                gap: 40px;
+            }
+
+            .logo-group img {
+                height: 60px;
+            }
+
+            .logo-section::before,
+            .logo-section::after {
+                width: 80px;
             }
         }
 
@@ -1428,6 +1513,50 @@
             <div class="about-item">
                 <div class="about-number">GB/T</div>
                 <div class="about-label">国家标准参与制定</div>
+            </div>
+        </div>
+
+        <!-- Logo 滚动展示 -->
+        <div class="logo-section">
+            <div class="logo-track">
+                <div class="logo-group">
+                    <img src="logos/0017029486893615_b.jpg" alt="Logo">
+                    <img src="logos/09306275e79165a6862b.jpg" alt="Logo">
+                    <img src="logos/54f88670-7cec-4da5-b7cc-8c8a2e3ab797.png" alt="Logo">
+                    <img src="logos/CgAG0mTkDQaAE36uAALG_AWUx-Q952.jpg" alt="Logo">
+                    <img src="logos/OIP (1)_副本.jpg" alt="Logo">
+                    <img src="logos/OIP (2).webp" alt="Logo">
+                    <img src="logos/OIP (3).webp" alt="Logo">
+                    <img src="logos/OIP.jpeg" alt="Logo">
+                    <img src="logos/OIP_副本.png" alt="Logo">
+                    <img src="logos/R (1).png" alt="Logo">
+                    <img src="logos/R (2).png" alt="Logo">
+                    <img src="logos/R (3).png" alt="Logo">
+                    <img src="logos/R.jpeg" alt="Logo">
+                    <img src="logos/R.png" alt="Logo">
+                    <img src="logos/ca366e20d2f12ea1a2c54fb62f6f4944.png" alt="Logo">
+                    <img src="logos/da7de3fc2d98f9289058722cdf484f54.png" alt="Logo">
+                    <img src="logos/e324ed550481184270a3e07524336e6e.png" alt="Logo">
+                </div>
+                <div class="logo-group">
+                    <img src="logos/0017029486893615_b.jpg" alt="Logo">
+                    <img src="logos/09306275e79165a6862b.jpg" alt="Logo">
+                    <img src="logos/54f88670-7cec-4da5-b7cc-8c8a2e3ab797.png" alt="Logo">
+                    <img src="logos/CgAG0mTkDQaAE36uAALG_AWUx-Q952.jpg" alt="Logo">
+                    <img src="logos/OIP (1)_副本.jpg" alt="Logo">
+                    <img src="logos/OIP (2).webp" alt="Logo">
+                    <img src="logos/OIP (3).webp" alt="Logo">
+                    <img src="logos/OIP.jpeg" alt="Logo">
+                    <img src="logos/OIP_副本.png" alt="Logo">
+                    <img src="logos/R (1).png" alt="Logo">
+                    <img src="logos/R (2).png" alt="Logo">
+                    <img src="logos/R (3).png" alt="Logo">
+                    <img src="logos/R.jpeg" alt="Logo">
+                    <img src="logos/R.png" alt="Logo">
+                    <img src="logos/ca366e20d2f12ea1a2c54fb62f6f4944.png" alt="Logo">
+                    <img src="logos/da7de3fc2d98f9289058722cdf484f54.png" alt="Logo">
+                    <img src="logos/e324ed550481184270a3e07524336e6e.png" alt="Logo">
+                </div>
             </div>
         </div>
     </section>
