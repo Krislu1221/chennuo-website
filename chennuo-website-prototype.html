@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水矢量雾化悬浮冷却塔 - 零电耗·零噪音·零浪费</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "SF Pro Display", "Microsoft YaHei", sans-serif;
+            background: #FFFFFF;
+            color: #1A1A1A;
+            overflow-x: hidden;
+        }
+
+        /* 第一屏：Slogan 区 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-slogan {
+            font-size: 48px;
+            font-weight: 200;
+            letter-spacing: 8px;
+            margin-bottom: 24px;
+            color: #1A1A1A;
+        }
+
+        .hero-slogan .highlight {
+            color: #0066FF;
+            font-weight: 400;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #666666;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            font-size: 14px;
+            color: #999999;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        /* 第二屏：核心能力 */
+        .features {
+            min-height: 100vh;
+            padding: 100px 60px;
+            background: #FAFAFA;
+        }
+
+        .features-title {
+            font-size: 36px;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 80px;
+            letter-spacing: 4px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: #FFFFFF;
+            padding: 50px 40px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .feature-name {
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 16px;
+            color: #0066FF;
+        }
+
+        .feature-desc {
+            font-size: 15px;
+            color: #666666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* 第三屏：经济账 */
+        .economics {
+            min-height: 100vh;
+            padding: 100px 60px;
+            background: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .economics-title {
+            font-size: 36px;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .economics-subtitle {
+            font-size: 18px;
+            color: #999999;
+            text-align: center;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .savings-total {
+            font-size: 96px;
+            font-weight: 700;
+            color: #00A86B;
+            font-family: "DIN Alternate", "Helvetica Neue", sans-serif;
+            margin-bottom: 16px;
+        }
+
+        .savings-label {
+            font-size: 20px;
+            color: #666666;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .savings-breakdown {
+            display: flex;
+            gap: 80px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+
+        .savings-item {
+            text-align: center;
+        }
+
+        .savings-amount {
+            font-size: 36px;
+            font-weight: 600;
+            color: #1A1A1A;
+            font-family: "DIN Alternate", "Helvetica Neue", sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .savings-bar {
+            width: 200px;
+            height: 8px;
+            background: #F0F0F0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0 auto 12px;
+        }
+
+        .savings-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            animation: fillBar 1.5s ease-out;
+        }
+
+        @keyframes fillBar {
+            from { width: 0; }
+        }
+
+        .savings-item-name {
+            font-size: 14px;
+            color: #999999;
+            font-weight: 300;
+        }
+
+        .roi {
+            font-size: 24px;
+            color: #666666;
+            font-weight: 300;
+            margin-bottom: 60px;
+        }
+
+        .roi strong {
+            color: #0066FF;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            padding: 18px 48px;
+            background: #0066FF;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #0052CC;
+        }
+
+        /* 第四屏：信任背书 */
+        .trust {
+            min-height: 80vh;
+            padding: 100px 60px;
+            background: #FAFAFA;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto 80px;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-number {
+            font-size: 56px;
+            font-weight: 700;
+            color: #0066FF;
+            font-family: "DIN Alternate", "Helvetica Neue", sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .trust-label {
+            font-size: 16px;
+            color: #666666;
+            font-weight: 300;
+        }
+
+        .case-study {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .case-title {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        .case-data {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* 页脚 */
+        .footer {
+            padding: 60px;
+            background: #1A1A1A;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #999999;
+            font-weight: 300;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-slogan {
+                font-size: 32px;
+                letter-spacing: 4px;
+            }
+
+            .features, .economics, .trust {
+                padding: 60px 20px;
+            }
+
+            .savings-total {
+                font-size: 56px;
+            }
+
+            .savings-breakdown {
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 第一屏：Slogan 区 -->
+    <section class="hero">
+        <h1 class="hero-slogan">
+            <span class="highlight">零</span>电耗 · <span class="highlight">零</span>噪音 · <span class="highlight">零</span>浪费
+        </h1>
+        <p class="hero-subtitle">水矢量雾化悬浮冷却塔</p>
+        <div class="scroll-hint">向下滚动 ↓</div>
+    </section>
+
+    <!-- 第二屏：核心能力 -->
+    <section class="features">
+        <h2 class="features-title">核心能力</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3 class="feature-name">零电耗</h3>
+                <p class="feature-desc">利用水泵富余压力驱动<br>无需风机电机，节电 100%</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🔇</span>
+                <h3 class="feature-name">零噪音</h3>
+                <p class="feature-desc">无电机振动干扰<br>运行噪音≤60 分贝</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💧</span>
+                <h3 class="feature-name">零浪费</h3>
+                <p class="feature-desc">水雾回收专利装置<br>节水 30-60%</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3 class="feature-name">超高效</h3>
+                <p class="feature-desc">二次雾化技术<br>逼近度≤3 度</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第三屏：经济账 -->
+    <section class="economics">
+        <h2 class="economics-title">经济账</h2>
+        <p class="economics-subtitle">以 1000m³/h 冷却塔为例，每年节省</p>
+        
+        <div class="savings-total">¥546,800</div>
+        <div class="savings-label">省下来的钱</div>
+
+        <div class="savings-breakdown">
+            <div class="savings-item">
+                <div class="savings-amount">¥275,500</div>
+                <div class="savings-bar">
+                    <div class="savings-bar-fill" style="width: 100%; background: linear-gradient(90deg, #0066FF, #00AAFF);"></div>
+                </div>
+                <div class="savings-item-name">电费</div>
+            </div>
+            <div class="savings-item">
+                <div class="savings-amount">¥250,800</div>
+                <div class="savings-bar">
+                    <div class="savings-bar-fill" style="width: 91%; background: linear-gradient(90deg, #00A86B, #00D4AA);"></div>
+                </div>
+                <div class="savings-item-name">水费</div>
+            </div>
+            <div class="savings-item">
+                <div class="savings-amount">¥20,500</div>
+                <div class="savings-bar">
+                    <div class="savings-bar-fill" style="width: 7%; background: linear-gradient(90deg, #F39C12, #F1C40F);"></div>
+                </div>
+                <div class="savings-item-name">维护费</div>
+            </div>
+        </div>
+
+        <div class="roi">投资回报周期：<strong>2.1 年</strong></div>
+
+        <button class="cta-button">计算你的工厂能省多少 →</button>
+    </section>
+
+    <!-- 第四屏：信任背书 -->
+    <section class="trust">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-number">1+34</div>
+                <div class="trust-label">发明专利 + 实用新型</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">10 年</div>
+                <div class="trust-label">研发周期</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">5000 万</div>
+                <div class="trust-label">自投资金</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">GB/T</div>
+                <div class="trust-label">国家标准参与制定</div>
+            </div>
+        </div>
+
+        <div class="case-study">
+            <h3 class="case-title">惠州光宏科技案例</h3>
+            <p class="case-data">
+                压缩机电流从 151 安降至 143 安<br>
+                冷却水温度更低，运行更稳定<br>
+                <strong>年省 54.68 万 · 2 年回本</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p class="footer-text">© 2026 深圳辰诺节能科技有限公司</p>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 数字动画
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // 滚动时触发动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.feature-card, .savings-item, .trust-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
