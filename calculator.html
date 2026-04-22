@@ -122,11 +122,18 @@
         /* Tooltip 样式 */
         .bar-bg { position: relative; cursor: pointer; }
         .tooltip {
-            display: none; position: absolute; left: 50%; top: -36px; transform: translateX(-50%);
-            background: rgba(20,20,20,0.85); color: #fff; padding: 6px 12px; border-radius: 6px;
-            font-size: 12px; white-space: nowrap; z-index: 20; pointer-events: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            display: none !important; /* 默认隐藏 */
+            position: absolute; left: 50%; top: -50px; transform: translateX(-50%);
+            background: #111; color: #fff; padding: 8px 16px; border-radius: 8px;
+            font-size: 13px; white-space: nowrap; z-index: 9999 !important; pointer-events: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #333;
         }
+        .bar-bg:hover .tooltip {
+            display: block !important; /* 强制显示 */
+            animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn { from { opacity: 0; transform: translateX(-50%) scale(0.8); } to { opacity: 1; transform: translateX(-50%) scale(1); } }
+
         .tooltip::after {
             content: ''; position: absolute; left: 50%; bottom: -5px; transform: translateX(-50%);
             border-left: 5px solid transparent; border-right: 5px solid transparent;
@@ -319,7 +326,7 @@
                              data-water="${city.water.toFixed(1)}">
                             <div class="bar-fill" style="width: 0%; background: ${color}; transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);" data-target="${percent}"></div>
                             <span class="bar-value">${city.totalSave.toFixed(1)}万</span>
-                            <div class="tooltip">⚡ 电价: ${city.elec.toFixed(2)}元/度 | 💧 水价: ${city.water.toFixed(1)}元/吨</div>
+                            <div class="tooltip">📍 ${city.name} | 电费: ${city.elec}元 | 水费: ${city.water}元</div>
                         </div>
                     </div>
                 `;
