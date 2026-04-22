@@ -12,18 +12,21 @@
             padding-bottom: 60px;
         }
         
-        /* 导航栏 */
+        
         .navbar {
             display: flex; align-items: center; justify-content: space-between;
             padding: 0 40px; height: 70px; background: #fff;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05); position: fixed; width: 100%; top: 0; z-index: 100;
         }
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; cursor: pointer; }
+        .nav-brand-text { font-size: 20px; font-weight: 700; color: #4CAF50; letter-spacing: 1px; }
+
         .back-link {
             text-decoration: none; color: #666; font-size: 15px;
             display: flex; align-items: center; gap: 8px; transition: color 0.2s;
         }
-        .back-link:hover { color: #0066FF; }
-        .logo { font-size: 20px; font-weight: 700; color: #0066FF; }
+        .back-link:hover { color: #4CAF50; }
+        .logo { font-size: 20px; font-weight: 700; color: #4CAF50; }
 
         /* Hero */
         .hero {
@@ -75,12 +78,12 @@
             width: 100%; padding: 12px; border: 1px solid #E0E0E0; border-radius: 8px;
             font-size: 16px; transition: border 0.2s;
         }
-        .form-item input:focus { border-color: #0066FF; outline: none; }
+        .form-item input:focus { border-color: #4CAF50; outline: none; }
         
         .full-width { grid-column: span 2; }
 
         .calc-btn {
-            width: 100%; padding: 16px; background: #0066FF; color: #fff; border: none;
+            width: 100%; padding: 16px; background: #4CAF50; color: #fff; border: none;
             border-radius: 8px; font-size: 18px; font-weight: 600; cursor: pointer;
             transition: background 0.2s;
         }
@@ -149,7 +152,12 @@
         <a href="index.html" class="back-link">
             ← 返回辰诺主页
         </a>
-        <div class="logo">辰诺节能</div>
+        
+<div class="nav-brand">
+    <img src="logo.png" alt="Logo" height="42" style="object-fit: contain;">
+    <span class="nav-brand-text">辰诺节能</span>
+</div>
+
     </nav>
 
     <!-- 头部 -->
