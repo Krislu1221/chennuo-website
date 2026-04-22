@@ -52,7 +52,7 @@
         .city-name { width: 80px; text-align: right; padding-right: 15px; color: #666; flex-shrink: 0; }
         .bar-bg { flex-grow: 1; background: #F0F2F5; height: 24px; border-radius: 4px; overflow: hidden; position: relative; }
         .bar-fill {
-            height: 100%; background: linear-gradient(90deg, #0066FF, #00AAFF);
+            height: 100%; background: linear-gradient(90deg, #64748B, #94A3B8);
             border-radius: 4px; transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1);
             width: 0;
         }
@@ -291,7 +291,7 @@
                 const percent = (city.totalSave / (maxVal * 1.1)) * 100;
                 
                 // 颜色：前三名高亮
-                let color = 'linear-gradient(90deg, #0066FF, #00AAFF)';
+                let color = 'linear-gradient(90deg, #64748B, #94A3B8)';
                 if(index < 3) color = 'linear-gradient(90deg, #FF6B35, #FF9F1C)';
 
                 html += `
