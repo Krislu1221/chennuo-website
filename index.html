@@ -1268,7 +1268,7 @@
             <button class="flow-btn active" data-flow="1000">1000m³/h</button>
         </div>
 
-        <div class="savings-total" id="savingsTotal">¥541,000</div>
+        <div class="savings-total" id="savingsTotal">¥451,600</div>
         <div class="savings-label">每年节省</div>
 
         <div class="savings-breakdown">
@@ -1280,14 +1280,14 @@
                 <div class="savings-item-name">电费</div>
             </div>
             <div class="savings-item">
-                <div class="savings-amount" id="waterCost">¥390,000</div>
+                <div class="savings-amount" id="waterCost">¥159,100</div>
                 <div class="savings-bar">
                     <div class="savings-bar-fill" id="waterBar" style="width: 91%; background: linear-gradient(90deg, #00A86B, #00D4AA);"></div>
                 </div>
                 <div class="savings-item-name">水费</div>
             </div>
             <div class="savings-item">
-                <div class="savings-amount" id="maintenanceCost">¥19,600</div>
+                <div class="savings-amount" id="maintenanceCost">¥17,000</div>
                 <div class="savings-bar">
                     <div class="savings-bar-fill" id="maintenanceBar" style="width: 7%; background: linear-gradient(90deg, #F39C12, #F1C40F);"></div>
                 </div>
@@ -1295,7 +1295,7 @@
             </div>
         </div>
 
-        <div class="roi">投资回报周期：<strong id="roiPeriod">1.85 年</strong></div>
+        <div class="roi">投资回报周期：<strong id="roiPeriod">2.21 年</strong></div>
 
         <button class="cta-button">获取详细节能方案 →</button>
     </section>
@@ -1841,27 +1841,9 @@
     <script>
         // 经济账数据
         const economicsData = {
-            100: {
-                total: 54500,       // 5.45 万
-                electricity: 13500, // 1.35 万 (下调)
-                water: 39000,       // 3.9 万 (上调)
-                maintenance: 2000,  // 0.2 万
-                roi: '1.85 年'
-            },
-            500: {
-                total: 272500,      // 27.25 万
-                electricity: 67500, // 6.75 万
-                water: 195000,      // 19.5 万
-                maintenance: 10000, // 1 万
-                roi: '1.85 年'
-            },
-            1000: {
-                total: 545000,      // 54.5 万
-                electricity: 135000, // 13.5 万
-                water: 390000,       // 39 万
-                maintenance: 20000,  // 2 万
-                roi: '1.85 年'
-            }
+            100: { total: 45160, electricity: 27550, water: 15910, maintenance: 1700, roi: '2.21 年' },
+            500: { total: 225800, electricity: 137750, water: 79550, maintenance: 8500, roi: '2.21 年' },
+            1000: { total: 451600, electricity: 275500, water: 159100, maintenance: 17000, roi: '2.21 年' }
         };
 
         // 流量选择器
@@ -1884,7 +1866,7 @@
                 
                 // 更新条形图
                 // 水费现在是大头，设为 100%
-                document.getElementById('waterBar').style.width = '100%';
+                document.getElementById('waterBar').style.width = '58%'; // 15.9/27.5
                 document.getElementById('electricityBar').style.width = Math.round(data.electricity / data.water * 100) + '%';
                 document.getElementById('maintenanceBar').style.width = Math.round(data.maintenance / data.water * 100) + '%';
                 
