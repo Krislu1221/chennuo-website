@@ -119,54 +119,27 @@
             .bar-row { margin-bottom: 8px; }
         }
 
-        /* Tooltip 样式 */
+        /* Tooltip 样式 - 统一清理版 */
         .bar-bg { position: relative; cursor: pointer; }
         .tooltip {
-            display: none !important; /* 默认隐藏 */
-            position: absolute; left: 50%; top: -50px; transform: translateX(-50%);
+            display: none; position: absolute; left: 50%; top: -55px; transform: translateX(-50%);
             background: #111; color: #fff; padding: 8px 16px; border-radius: 8px;
-            font-size: 13px; white-space: nowrap; z-index: 9999 !important; pointer-events: none;
+            font-size: 13px; white-space: nowrap; z-index: 100; pointer-events: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #333;
-        }
-        .bar-bg:hover .tooltip {
-            display: block !important; /* 强制显示 */
-            animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        @keyframes popIn { from { opacity: 0; transform: translateX(-50%) scale(0.8); } to { opacity: 1; transform: translateX(-50%) scale(1); } }
-
-        .tooltip::after {
-            content: ''; position: absolute; left: 50%; bottom: -5px; transform: translateX(-50%);
-            border-left: 5px solid transparent; border-right: 5px solid transparent;
-            border-top: 5px solid rgba(20,20,20,0.85);
+            text-align: center; line-height: 1.4;
         }
         .bar-bg:hover .tooltip { display: block; animation: fadeInTip 0.2s ease; }
-        @keyframes fadeInTip { from { opacity: 0; transform: translateX(-50%) translateY(4px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+        @keyframes fadeInTip { from { opacity: 0; transform: translateX(-50%) translateY(5px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
 
-
-        .highlight-word {
-            font-size: 1.5em; /* 比其他字大 50% */
-            color: #4CAF50 !important;   /* Logo 绿 */
-            font-weight: 800; /* 加粗 */
-            margin: 0 4px;
-        }
-
-
-        /* Tooltip 样式 */
-        .bar-bg { position: relative; cursor: pointer; }
-        .tooltip {
-            display: none; position: absolute; left: 50%; top: -60px; transform: translateX(-50%);
-            background: rgba(20, 20, 20, 0.9); color: #fff; padding: 10px 14px; border-radius: 8px;
-            font-size: 13px; white-space: nowrap; z-index: 100; pointer-events: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-align: center; line-height: 1.4;
-        }
-        .tooltip-title { color: #4CAF50; font-weight: 700; display: block; margin-bottom: 4px; }
         .tooltip::after {
             content: ''; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
             border-left: 6px solid transparent; border-right: 6px solid transparent;
-            border-top: 6px solid rgba(20, 20, 20, 0.9);
+            border-top: 6px solid #111;
         }
-        .bar-bg:hover .tooltip { display: block; animation: fadeIn 0.3s ease; }
 
+        .highlight-word {
+            font-size: 1.5em; color: #4CAF50; font-weight: 800; margin: 0 4px;
+        }
     </style>
 </head>
 <body>
@@ -383,30 +356,6 @@
             });
         }
     </script>
-
-    <!-- Force Tooltip Styles Override -->
-    <style>
-    .bar-bg { cursor: pointer; }
-    .tooltip {
-        display: none !important;
-        position: absolute !important;
-        left: 50% !important;
-        top: -55px !important;
-        transform: translateX(-50%) !important;
-        background: #222 !important;
-        color: #fff !important;
-        padding: 10px 15px !important;
-        border-radius: 6px !important;
-        font-size: 13px !important;
-        white-space: nowrap !important;
-        z-index: 999999 !important; /* 极高优先级 */
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
-    }
-    .bar-bg:hover .tooltip {
-        display: block !important;
-    }
-    </style>
-    <!-- End Override -->
 
 </body>
 </html>
