@@ -130,6 +130,14 @@
         .bar-bg:hover .tooltip { display: block; animation: fadeInTip 0.2s ease; }
         @keyframes fadeInTip { from { opacity: 0; transform: translateX(-50%) translateY(4px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
 
+
+        .highlight-word {
+            font-size: 1.5em; /* 比其他字大 50% */
+            color: #4CAF50;   /* Logo 绿 */
+            font-weight: 800; /* 加粗 */
+            margin: 0 4px;
+        }
+
     </style>
 </head>
 <body>
@@ -144,7 +152,7 @@
 
     <!-- 头部 -->
     <section class="hero">
-        <h1>看看您所在地区能省多少钱</h1>
+        <h1>看看您所在地区能<span class="highlight-word">省</span>多少钱</h1>
         <p>基于 1000m³/h 标准机组模型 · 24 小时运行 · 真实数据参考</p>
     </section>
 
