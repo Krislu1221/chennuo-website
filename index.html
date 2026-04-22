@@ -61,29 +61,27 @@
             overflow-x: hidden;
         }
 
-        /* 导航栏 */
+        
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 60px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 5%; height: 72px; background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
         }
+        .nav-brand { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+        .nav-logo-img { height: 42px; width: auto; }
+        .nav-brand-text { font-size: 22px; font-weight: 700; color: #4CAF50; letter-spacing: 1px; }
+        
+        .nav-menu { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+        .nav-menu a { text-decoration: none; color: #666; font-size: 15px; font-weight: 500; transition: color 0.2s; }
+        .nav-menu a:hover, .nav-menu a.active { color: #4CAF50; }
+        
+        .nav-cta { 
+            padding: 8px 20px; background: #4CAF50; color: #fff !important; 
+            border-radius: 6px; font-weight: 600; 
+        }
+        .nav-cta:hover { background: #388E3C; }
 
-        .navbar-logo {
-            font-size: 20px;
-            font-weight: 600;
-            color: #4CAF50;
-            letter-spacing: 1px;
-        }
 
         .navbar-menu {
             display: flex;
@@ -130,6 +128,7 @@
         }
 
         .hero-slogan {
+            color: #4B5563;
             font-size: 56px;
             font-weight: 600;
             letter-spacing: 12px;
@@ -140,10 +139,12 @@
 
         .hero-slogan .highlight {
             color: #4CAF50;
+            color: #4CAF50;
             font-weight: 700;
         }
 
         .hero-subtitle {
+            color: #666666;
             font-size: 20px;
             color: #666666;
             font-weight: 300;
@@ -190,7 +191,7 @@
         }
 
         /* 第二屏：核心能力 */
-        .features {
+        .features { max-width: 100%; margin: 0 auto;
             min-height: 100vh;
             padding: 100px 60px;
             background: #FAFAFA;
@@ -304,7 +305,7 @@
         }
 
         /* 第三屏：经济账 */
-        .economics {
+        .economics { max-width: 100%; margin: 0 auto;
             min-height: 100vh;
             padding: 100px 60px;
             background: #FFFFFF;
@@ -525,7 +526,7 @@
         }
 
         /* 第四屏：公司介绍 */
-        .about {
+        .about { max-width: 100%; margin: 0 auto;
             min-height: 80vh;
             padding: 100px 60px;
             background: #FAFAFA;
@@ -675,12 +676,14 @@
             }
 
             .hero-slogan {
+            color: #4B5563;
                 font-size: 36px;
                 letter-spacing: 6px;
                 margin-bottom: 20px;
             }
 
             .hero-subtitle {
+            color: #666666;
                 font-size: 16px;
                 margin-bottom: 30px;
             }
@@ -697,7 +700,7 @@
                 font-size: 12px;
             }
 
-            .features {
+            .features { max-width: 100%; margin: 0 auto;
                 padding: 60px 20px;
             }
 
@@ -735,7 +738,7 @@
                 font-size: 12px;
             }
 
-            .economics {
+            .economics { max-width: 100%; margin: 0 auto;
                 padding: 60px 20px;
             }
 
@@ -787,7 +790,7 @@
                 font-size: 15px;
             }
 
-            .about {
+            .about { max-width: 100%; margin: 0 auto;
                 padding: 60px 20px;
             }
 
@@ -870,6 +873,7 @@
         /* 超小屏幕优化 */
         @media (max-width: 480px) {
             .hero-slogan {
+            color: #4B5563;
                 font-size: 28px;
                 letter-spacing: 4px;
             }
@@ -1104,20 +1108,30 @@
             border-style: solid;
         }
 
+
+        .container {
+            max-width: 1200px; margin: 0 auto; padding: 0 20px;
+        }
+
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
-        <div class="logo"><img src="logo.png" alt="Logo" height="45" style="object-fit: contain;"></div>
-        <div class="navbar-logo">辰诺节能</div>
-        <ul class="navbar-menu">
+        <div class="nav-brand">
+            <img src="logo.png" alt="Logo" height="42" class="nav-logo-img">
+            <span class="nav-brand-text">辰诺节能</span>
+        </div>
+        
+        <ul class="nav-menu">
             <li><a href="#home">首页</a></li>
-            <li><a href="#features">产品介绍</a></li>
-            <li><a href="#economics">经济效益</a></li>
-            <li><a href="#about">公司介绍</a></li>
+            <li><a href="#features">核心优势</a></li>
+            <li><a href="#economics">经济账</a></li>
+            <li><a href="calculator.html" class="calc-link">计算器</a></li>
+            <li><a href="#about">关于</a></li>
         </ul>
-        <a href="#contact" class="navbar-contact">联系我们</a>
+
+        <a href="mailto:contact@chennuo.com" class="nav-cta">联系我们</a>
     </nav>
 
     <!-- 第一屏：Slogan 区 -->
