@@ -113,6 +113,23 @@
             .hero h1 { font-size: 28px; }
             .bar-row { margin-bottom: 8px; }
         }
+
+        /* Tooltip 样式 */
+        .bar-bg { position: relative; cursor: pointer; }
+        .tooltip {
+            display: none; position: absolute; left: 50%; top: -36px; transform: translateX(-50%);
+            background: rgba(20,20,20,0.85); color: #fff; padding: 6px 12px; border-radius: 6px;
+            font-size: 12px; white-space: nowrap; z-index: 20; pointer-events: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .tooltip::after {
+            content: ''; position: absolute; left: 50%; bottom: -5px; transform: translateX(-50%);
+            border-left: 5px solid transparent; border-right: 5px solid transparent;
+            border-top: 5px solid rgba(20,20,20,0.85);
+        }
+        .bar-bg:hover .tooltip { display: block; animation: fadeInTip 0.2s ease; }
+        @keyframes fadeInTip { from { opacity: 0; transform: translateX(-50%) translateY(4px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
     </style>
 </head>
 <body>
@@ -262,9 +279,12 @@
                 html += `
                     <div class="bar-row">
                         <div class="city-name">${index + 1}. ${city.name}</div>
-                        <div class="bar-bg">
-                            <div class="bar-fill" style="width: ${percent}%; background: ${color};"></div>
+                        <div class="bar-bg" 
+                             data-elec="${city.elec.toFixed(2)}" 
+                             data-water="${city.water.toFixed(1)}">
+                            <div class="bar-fill" style="width: 0%; background: ${color}; transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);" data-target="${percent}"></div>
                             <span class="bar-value">${city.totalSave.toFixed(1)}万</span>
+                            <div class="tooltip">⚡ 电价: ${city.elec.toFixed(2)}元/度 | 💧 水价: ${city.water.toFixed(1)}元/吨</div>
                         </div>
                     </div>
                 `;
@@ -312,13 +332,13 @@
         // 初始化
         window.onload = function() {
             renderChart();
-            // 简单的柱状图动画
-            setTimeout(() => {
-                document.querySelectorAll('.bar-fill').forEach(bar => {
-                    const target = bar.getAttribute('data-target');
-                    bar.style.width = target + '%';
-                });
-            }, 100);
+            // 依次触发的柱状图动画
+            const bars = document.querySelectorAll('.bar-fill');
+            bars.forEach((bar, i) => {
+                setTimeout(() => {
+                    bar.style.width = bar.getAttribute('data-target') + '%';
+                }, i * 60); // 每 60ms 出来一个
+            });
         }
     </script>
 </body>
