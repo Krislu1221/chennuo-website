@@ -143,6 +143,23 @@
             margin: 0 4px;
         }
 
+
+        /* Tooltip 样式 */
+        .bar-bg { position: relative; cursor: pointer; }
+        .tooltip {
+            display: none; position: absolute; left: 50%; top: -60px; transform: translateX(-50%);
+            background: rgba(20, 20, 20, 0.9); color: #fff; padding: 10px 14px; border-radius: 8px;
+            font-size: 13px; white-space: nowrap; z-index: 100; pointer-events: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2); text-align: center; line-height: 1.4;
+        }
+        .tooltip-title { color: #4CAF50; font-weight: 700; display: block; margin-bottom: 4px; }
+        .tooltip::after {
+            content: ''; position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
+            border-left: 6px solid transparent; border-right: 6px solid transparent;
+            border-top: 6px solid rgba(20, 20, 20, 0.9);
+        }
+        .bar-bg:hover .tooltip { display: block; animation: fadeIn 0.3s ease; }
+
     </style>
 </head>
 <body>
