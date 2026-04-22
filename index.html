@@ -1083,6 +1083,25 @@
         }
         .data-card a:hover { background: #0066FF; color: #fff; }
 
+
+        /* 计算器按钮样式 */
+        .calc-button {
+            margin-top: 15px;
+            padding: 14px 36px;
+            background: transparent;
+            color: #0066FF;
+            border: 1px dashed #0066FF;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .calc-button:hover {
+            background: #f0f7ff;
+            border-style: solid;
+        }
+
     </style>
 </head>
 <body>
@@ -1295,12 +1314,17 @@
             </div>
         </div>
 
-                <div class="roi">
+                        <div class="roi">
             通常投资回报周期：<strong id="roiPeriod">2 - 4 年</strong>
             <div style="font-size:12px; color:#999; margin-top:8px; font-weight:300;">* 实际回收期视当地水电价格、年运行时长及系统集成成本而定</div>
         </div>
+        </div>
 
         <button class="cta-button">获取详细节能方案 →</button>
+        <button class="calc-button" onclick="window.location.href='calculator.html'">
+            🧮 算一算你的地区能节省多少 →
+        </button>
+
     </section>
 
     <!-- 演示区域：冷却流程 -->
